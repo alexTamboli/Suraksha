@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cabin&display=swap');
+* {
+    margin:0;
+    padding: 0;
+}
+
+body{
+    background-color: #270e3b;
+}
+
+
+.header h1{
+    letter-spacing: 20px;
+    font-family: 'Bebas Neue', cursive;
+    color:rgb(174, 142, 196);
+}
+
+.header p{
+    font-family: 'Cabin', sans-serif;
+    color:rgb(81, 53, 100);
+}
+.header{
+    max-width: 88%;
+    background-color: #240442;
+    opacity: 0.8;
+    background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #270e3b 10px ), repeating-linear-gradient( #45096855, #270e3b );
+    padding: 0.5rem 0;
+    text-align: center;
+    margin: 0.4rem auto;
+    box-shadow: 0 8px 32px 0 rgba(69, 21, 92, 0.37);
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.048);  
+}
+
+.m-container h1{
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 5px;
+    color:rgb(234, 220, 243)
+}
+
+.m-container p{
+    font-size: 15px;
+    justify-self: left;
+    margin-top:10px;
+    color:rgb(167, 151, 177)
+}
+
+.m-container{
+    padding-left: 2rem ;
+    padding-right: 2rem;
+    margin: 3rem auto;
+    max-width: 800px;
+}
+
+.left-container{
+    float: left;
+    width: 75%;
+    height: 500px;
+}
+
+.left-container {
+    float: left;
+    width: 50%;
+    height: 500px;
+}
+
+.right-container{
+    align-items: right;
+    display: block;
+    width: 50%;
+    float: right;
+    background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #270e3b 10px ), repeating-linear-gradient( #45096855, #270e3b );
+    height: 400px;
+    margin-bottom: 100px;
+}
+.right-container button,a{
+    margin-left: 2rem;
+    text-align: right;
+}
+
+.vl {
+    border-left: 2px solid linear-gradient(rgb(62, 17, 92),transparent);
+    height: 500px;
+  }
+
+.left-container input, textarea{
+    border: 1px transparent;
+    font-family: 'Bebas Neue', cursive;
+    background: rgb(55,22,82);
+    background: linear-gradient(90deg, rgba(55,22,82,1) 0%, rgba(84,41,119,1) 100%);
+    display: block;
+    outline: none;
+    border-radius: 8px;
+    width: 80%;
+    margin-top: 0px;
+    padding:8px;
+    font-size: 16px;
+
+}
+
+.fieldLabel, textarea{
+    color: aliceblue;
+    border: 1px transparent;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.left-container input,placeholder {
+    letter-spacing: 0.2rem;
+    color: aliceblue;
+    border: 1px transparent;
+    font-family: 'Bebas Neue', cursive;
+    background: rgb(55,22,82);
+    background: linear-gradient(90deg, rgba(55,22,82,1) 0%, rgba(84,41,119,1) 100%);
+    display: block;
+    outline: none;
+    border-radius: 8px;
+    width: 80%;
+    padding:8px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+
+.left-container input::placeholder, textarea::placeholder{
+    border: none;
+    color: #b0a0bd;
+    letter-spacing: 0.4rem;
+}
+
+
+.btn{
+    font-family: 'Bebas Neue', cursive;
+    margin-top:1rem;
+    color: white;
+    background-color: purple;
+    padding: 8px 10px;
+    font-size: 20px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    cursor:pointer;
+}
+
+.submitMsg{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    color: rgb(245, 245, 245);
+}
+
+.box{
+    background:#b0a0bd;
+    display: block;
+    color: #240442;
+}

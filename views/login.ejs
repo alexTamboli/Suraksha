@@ -1,0 +1,23 @@
+<%- include("partials/header") -%>
+
+<div class="m-container">
+    <h1>LOGIN @ SURAKSHA</h1>
+    <hr style="height:2px;border-width:0;color:rgb(55, 13, 80);background-color:rgb(58, 18, 90)">
+    <div class="left-container">
+    <p>Register yourself and file online FIR and view the crime status</p>
+        <form action="/login" method="post"  autocomplete="off">
+        <label class="fieldLabel">Username</label>
+            <input type="text" name="username" id="username" placeholder="Username">
+            <label class="fieldLabel">Password</label>
+            <input type="password" name="password" id="password" placeholder="Password">
+            <button class="btn">Submit</button>
+        </form>
+        <a href="/register"><button class="btn">Register</button>
+        <a href="p_login"><button class="btn">Personnel Login</button>
+    </div>
+    <div class="right-container">
+        <div class="vl"></div> 
+    </div>
+</div>
+
+<%- include("partials/footer") -%>

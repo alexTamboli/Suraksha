@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cabin&display=swap');
+
+
+* {
+    margin:0;
+    padding: 0;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.home{
+    margin-top:25px;
+    text-align: center;
+}
+
+.db-details{
+    text-align: center;
+}
+
+.pieChart{
+    width: 800px;
+    margin: 0 auto;
+    color: aliceblue;
+    text-align: center;
+}
+
+.chart-container{
+    text-align: center;
+}
+
+.chart-container h1{
+    font-family: 'Bebas Neue', cursive;
+    color:rgb(237, 222, 247);
+}
+
+
+.welcome-user{
+    padding: 10px;
+    margin: 0.5rem auto;
+    text-align: center;
+    background: rgb(44,11,71);
+    background: linear-gradient(90deg, rgba(44,11,71,1) 0%, rgba(143,92,184,1) 100%);
+    color: rgb(237, 222, 247);
+    border-radius: 0.5rem;
+    max-width: 800px;
+}
+
+.welcome-user h1{
+    letter-spacing: 2px;
+    font-family: 'Bebas Neue', cursive;
+    color:rgb(237, 222, 247);
+}
+
+h1{
+    letter-spacing: 5px;
+    font-family: 'Bebas Neue', cursive;
+    color:rgb(237, 222, 247);
+}
+
+.welcome-user p{
+    letter-spacing: 2px;
+    font-family: 'Bebas Neue', cursive;
+    color:rgb(237, 222, 247);
+}
+
+a{
+    text-decoration: none;
+    color:aliceblue;
+}
+
+.dash-bottom{
+    text-align: center;
+}
+
+
+.home h1{
+    margin-bottom: 10px;
+    letter-spacing: 10px;
+    font-family: 'Bebas Neue', cursive;
+    color:rgb(237, 222, 247)
+}
+
+.homeIMG{
+    max-width: 750px;
+}
+
+.home-links{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 1rem;
+} 
+
+button{
+    cursor: pointer;
+    border: none;
+    font-size: 1.25rem;
+    border-radius: 10px;
+    padding: 0.4rem 1rem ;
+    font-family: 'Bebas Neue', cursive;
+    color:rgb(237, 222, 247);
+    background: linear-gradient(90deg, rgba(55,22,82,1) 0%, rgba(84,41,119,1) 100%);
+    transition: 0.2s all;
+}
+
+button:hover{
+    cursor: pointer;
+    border: none;
+    font-size: 1.25rem;
+    border-radius: 10px;
+    padding: 0.4rem 1rem ;
+    font-family: 'Bebas Neue', cursive;
+    color:rgb(100, 22, 0);
+    background: rgb(255, 196, 196);
+}
+
+body{
+    background-color: #270e3b;
+}
+
+.iiitv img{
+    max-width:500px;
+    margin-left:500px;
+}
+
+.header h1{
+    letter-spacing: 20px;
+    font-family: 'Bebas Neue', cursive;
+    color:rgb(174, 142, 196)
+}
+
+.header h5{
+    letter-spacing: 1px;
+    font-family:'Courier New', Courier, monospace;
+    color:rgb(174, 142, 196)
+}
+
+.names{
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.names h5{
+    font-family: 'Cabin', sans-serif;
+    color:rgb(81, 53, 100);
+}
+
+.credits{
+    padding-top: 0.5rem;
+    letter-spacing: 20px;
+    font-family: 'Bebas Neue', cursive;
+    color:rgb(174, 142, 196);
+    text-align: center;
+}
+
+.s-cell{
+    background-color: rgb(223, 173, 255);
+    color: #240442;
+}
+
+.credits h1{
+    letter-spacing: 5px;
+    font-family: 'Bebas Neue', cursive;
+    color:rgb(174, 142, 196)
+}
+
+table{
+    width: 600px;
+    border: 1px solid rgb(81, 53, 100); ;
+    border-radius: 5px;
+    color: rgb(226, 206, 239);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0.5rem auto;
+    background-color: #270e3b;
+}
+
+.personal-details h1{
+    color:rgb(226, 206, 239);
+    letter-spacing: 5px;
+ }
+
+.personal-details{
+   text-align: center;
+}
+
+.header p{
+    font-family: 'Cabin', sans-serif;
+    color:rgb(81, 53, 100);
+}
+
+.header{
+    max-width: 88%;
+    background-color: #240442;
+    opacity: 0.8;
+    background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #270e3b 10px ), repeating-linear-gradient( #45096855, #270e3b );
+    padding: 0.5rem 0;
+    text-align: center;
+    margin: 0.4rem auto;
+    box-shadow: 0 8px 32px 0 rgba(69, 21, 92, 0.37);
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.048);  
+}
+
+.m-container h1{
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 5px;
+    color:rgb(234, 220, 243)
+}
+
+.m-container p{
+    font-size: 15px;
+    justify-self: left;
+    margin-top:10px;
+    color:rgb(167, 151, 177)
+}
+
+.m-container{
+    padding-left: 2rem ;
+    padding-right: 2rem;
+    margin: 1rem auto;
+    max-width: 800px;
+}
+
+.left-container{
+    float: left;
+    width: 75%;
+    height: 500px;
+}
+
+.left-container {
+    float: left;
+    width: 50%;
+    height: 500px;
+}
+
+.right-container{
+    display: block;
+    width: 50%;
+    float: right;
+    background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #270e3b 10px ), repeating-linear-gradient( #45096855, #270e3b );
+    height: 400px;
+    margin-bottom: 100px;
+}
+
+.vl {
+    border-left: 2px solid linear-gradient(rgb(62, 17, 92),transparent);
+    height: 500px;
+  }
+
+.left-container input, textarea{
+    border: 1px transparent;
+    font-family: 'Bebas Neue', cursive;
+    background: rgb(55,22,82);
+    background: linear-gradient(90deg, rgba(55,22,82,1) 0%, rgba(84,41,119,1) 100%);
+    display: block;
+    outline: none;
+    border-radius: 8px;
+    width: 80%;
+    margin-top: 0px;
+    padding:8px;
+    font-size: 16px;
+
+}
+
+.fieldLabel, textarea{
+    color: aliceblue;
+    border: 1px transparent;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.left-container input,placeholder {
+    letter-spacing: 0.2rem;
+    color: aliceblue;
+    border: 1px transparent;
+    font-family: 'Bebas Neue', cursive;
+    background: rgb(55,22,82);
+    background: linear-gradient(90deg, rgba(55,22,82,1) 0%, rgba(84,41,119,1) 100%);
+    display: block;
+    outline: none;
+    border-radius: 8px;
+    width: 80%;
+    padding:8px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+
+.left-container input::placeholder, textarea::placeholder{
+    border: none;
+    color: #b0a0bd;
+    letter-spacing: 0.4rem;
+}
+
+
+.btn{
+    font-family: 'Bebas Neue', cursive;
+    margin-top:1rem;
+    color: white;
+    background-color: purple;
+    padding: 8px 10px;
+    font-size: 20px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    cursor:pointer;
+}
+
+.submitMsg{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    color: rgb(245, 245, 245);
+}
+
+.box{
+    background:#b0a0bd;
+    display: block;
+    color: #240442;
+}
+
+.other-maps{
+    padding: 1.5rem;
+}

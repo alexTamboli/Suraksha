@@ -1,0 +1,22 @@
+<%- include("partials/header") -%>
+
+<div class="m-container">
+    <h1>Police Station Login @ Suraksha</h1>
+    <hr style="height:2px;border-width:0;color:rgb(237, 222, 247);;background-color:rgb(237, 222, 247)">
+    <div class="left-container">
+    	<p>PS are already registered. You need not to register.</p>
+        <form action="\p_login" method="post" autocomplete="off">
+            <label class="fieldLabel">Police Station ID (PSID)</label>
+            <input type="text" name="police_station_id" id="police_station_id" placeholder="Enter PSID">
+            <label class="fieldLabel">police station password</label>
+            <input type="password" name="police_station_password" id="police_station_password" placeholder="Password"
+            >
+            <a href=""></a><button class="btn">Submit</button>
+        </form>
+    </div>
+    <div class="right-container">
+        <div class="vl"></div> 
+    </div>
+</div>
+
+<%- include("partials/footer") -%>

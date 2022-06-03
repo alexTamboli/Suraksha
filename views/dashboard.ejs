@@ -1,0 +1,89 @@
+<%- include("partials/header") -%>
+
+<div class="welcome-user">
+    <h1>WELCOME <%= userdetails.username %></h1>
+    <p>You are now  in user dashboard page.</p>
+    <a href="/logout"><button type="button">Logout</button></a>
+</div>
+
+<div class="personal-details">
+    <hr style="height:2px;border-width:0;color:rgb(55, 13, 80);background-color:rgb(58, 18, 90)">
+    <h1>Personal Details in DB</h1>
+        
+    <table border = "1">
+        <tr>
+        	<td class="s-cell">User ID</td>
+            <td><%= userdetails.user_id %></td>
+        </tr>
+        <tr>
+            <td class="s-cell">Name</td>
+            <td><%= userdetails.name %></td>
+        </tr>
+        <tr>
+            <td class="s-cell">Father/Guardian Name:</td>
+            <td><%= userdetails.f_name %></td>
+        </tr>
+        <tr>
+            <td class="s-cell">Email:</td>
+            <td><%= userdetails.email %></td>
+        </tr>
+        <tr>
+            <td class="s-cell">Phone Number:</td>
+            <td><%= userdetails.phone_num %></td>
+        </tr>
+         
+        <tr>
+            <td class="s-cell">Address:</td>
+            <td><%= userdetails.address %></td>
+        </tr>
+        <tr>
+            <td class="s-cell">State:</td>
+            <td><%= userdetails.state %></td>
+        </tr>
+        <tr>
+            <td class="s-cell">Postal Code:</td>
+            <td><%= userdetails.postal %></td>
+        </tr>            
+    </table>
+
+    <hr style="height:2px;border-width:0;color:rgb(55, 13, 80);background-color:rgb(58, 18, 90)">
+</div>
+
+<div class="dash-bottom">
+    <a href="\fir"><button type="button">File ONLINE FIR</button></a>
+    <a href="\piechart"><button type="button">View Crime Maps</button></a>
+    <hr style="height:2px;border-width:0;color:rgb(55, 13, 80);background-color:rgb(58, 18, 90)">
+    </div>
+    <div class="db-details">
+    <h1>PREVIOUS FIRs FILED BY YOU</h1>
+    <table border = "1">
+        <tr>
+            <td class="s-cell">FIR ID</td>
+            <td class="s-cell">Complainer Name</td>
+            <td class="s-cell">Reffral Name</td>
+            <td class="s-cell">Nature</td>
+            <td class="s-cell">Time</td>
+            <td class="s-cell">Incident Place</td>
+            <td class="s-cell">Public Consent</td>
+            <td class="s-cell">State of Incident</td>
+        </tr>
+        
+        <% FIRs.forEach((fir)=> { %>
+        <tr>
+            <td><%= fir.fir_id %></td>
+            <td><%= fir.complainer_name %></td>
+            <td><%= fir.reffral_name %></td>
+            <td><%= fir.nature %></td>
+            <td><%= fir.time %></td>
+            <td><%= fir.incident_place %></td>
+            <td><%= fir.public_consent %></td>
+            <td><%= fir.state %></td>
+        </tr>
+        <% }); %>
+
+    </table>
+    <hr style="height:2px;border-width:0;color:rgb(55, 13, 80);background-color:rgb(58, 18, 90)">
+    </div>  
+</div>
+
+<%- include("partials/footer") -%>
