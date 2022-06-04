@@ -1,10 +1,10 @@
 <%- include("partials/header") -%>
 
     <div class="welcome-user">
-        <h1>WELCOME username</h1>
+        <h1>WELCOME <%=username%></h1>
         <p>You are proceeding to file ONLINE FIR.</p>
         <a href="\dashboard"><button type="button">Dashboard</button></a>
-        <a href="\"><button type="button">Logout</button></a>
+        <a href="\logout"><button type="button">Logout</button></a>
     </div>
 
   <div class="m-container">
@@ -13,7 +13,7 @@
         <div class="left-container">
             <p>Welcome to the Online FIR Filer. Enter your details with best of your intellectual faculties. Using this portal for amusement comes under legal offence.</p>
     
-            <form action="/fir_register" method="post"  autocomplete="off">
+            <form action="/fir" method="post"  autocomplete="off">
                 <label class="fieldLabel">FILER NAME</label>
                 <input type="text" name="complainer_name" id="complainer_name" placeholder="Enter Complainer Name">
                 <label class="fieldLabel">ASSERTED NAME (PERSON/ORGANIZATION/INSTITUTION)</label>
@@ -76,10 +76,11 @@
         </div>
 
         <div class="right-container">
-            <?php
-            if($insert == true)
-                echo "<p class='submitMsg'>YOUR FIR HAS BEEN FILED. YOU WILL BE CONTACTED VIA AUTHORIZED PERSONNEL.</p>";
-            ?>
+            <%if(insert === true){ %>
+                <p class='submitMsg'>YOUR FIR HAS BEEN FILED. YOU WILL BE CONTACTED VIA AUTHORIZED PERSONNEL.</p>
+            <%} else {%>
+                <p class='submitMsg'>YOUR FIR HAS NOT BEEN FILED.</p>
+            <%}%>
             <div class="vl"></div>
         </div>
     </div>

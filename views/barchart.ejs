@@ -1,0 +1,265 @@
+<%- include("partials/header") -%>
+
+<div class="welcome-user">
+	<h1>WELCOME <%=username%></h1>
+	<p>STATISTICS OF FIR FILED VIZ. UPON CRIME COMMITTED</p>
+	<a href="/logout"><button type="button">Logout</button></a>
+	<a href="/dashboard"><button type="button">Dashboard</button></a>
+</div>
+<div class="chart-container">
+    <h1>Suraksha Users on the basis of State & UTs</h1>
+    <canvas class="pieChart" id="myChart" style="width:100%;max-width:1200px"></canvas>
+    <hr style="height:2px;border-width:0;color:rgb(55, 13, 80);background-color:rgb(58, 18, 90)">
+    <div class="other-maps">
+        <a href="/piechart"><button type="button">CLICK TO SEE Distribution of ONLINE FIRs based on the Crime Category</button></a>
+        </div>
+    </div>
+  </body>
+
+<script>
+var xValues = ["Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chattisgarh","Goa","Gujarat","Haryana","Himachal Pradesh","Jharkhand","Karnataka","Kerela","MP","Maharashtra","Manipur","Meghalaya","Nagaland","Odisha","Punjab","Rajasthan","TN","Tripura","UP","WB","Andaman - Nicobar","Chandigarh","Daman and Diu","J&K","Ladakh","Lakshadweep","Puducherry"];
+var yValues = [
+  <?php
+    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Andhra Pradesh'";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_assoc($result);
+    echo $row["state"];
+    ?>
+,
+<?php
+    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Arunachal Pradesh'";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_assoc($result);
+    echo $row["state"];
+    ?>
+,
+<?php
+    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Assam'";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_assoc($result);
+    echo $row["state"];
+    ?>
+,
+<?php
+    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Bihar'";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_assoc($result);
+    echo $row["state"];
+    ?>
+,
+<?php
+   $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Chattisgarh'";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_assoc($result);
+    echo $row["state"];
+    ?>
+,
+<?php
+    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Goa'";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_assoc($result);
+    echo $row["state"];
+    ?>
+,
+<?php
+    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Gujarat'";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_assoc($result);
+    echo $row["state"];
+    ?>
+,
+<?php
+    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Haryana'";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_assoc($result);
+    echo $row["state"];
+    ?>
+,
+<?php
+    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Himachal Pradesh'";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_assoc($result);
+    echo $row["state"];
+    ?>
+,
+<?php
+    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Jharkhand'";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_assoc($result);
+    echo $row["state"];
+    ?>
+,
+<?php
+    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Karnataka'";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_assoc($result);
+    echo $row["state"];
+    ?>
+,
+<?php
+    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Kerela'";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_assoc($result);
+    echo $row["state"];
+    ?>
+,
+<?php
+    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Madhya Pradesh'";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_assoc($result);
+    echo $row["state"];
+    ?>
+,
+<?php
+    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Maharashtra'";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_assoc($result);
+    echo $row["state"];
+    ?>
+,
+<?php
+    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Manipur'";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_assoc($result);
+    echo $row["state"];
+    ?>
+,
+<?php
+    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Meghalaya'";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_assoc($result);
+    echo $row["state"];
+    ?>
+,
+<?php
+    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Nagaland'";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_assoc($result);
+    echo $row["state"];
+    ?>
+,
+<?php
+    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Odisha'";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_assoc($result);
+    echo $row["state"];
+    ?>
+,
+<?php
+    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Punjab'";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_assoc($result);
+    echo $row["state"];
+    ?>
+,
+<?php
+    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Rajasthan'";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_assoc($result);
+    echo $row["state"];
+    ?>
+,
+<?php
+    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Tamil Nadu'";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_assoc($result);
+    echo $row["state"];
+    ?>
+,
+<?php
+    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Uttar Pradesh'";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_assoc($result);
+    echo $row["state"];
+    ?>
+,
+<?php
+    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Uttrakhand'";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_assoc($result);
+    echo $row["state"];
+    ?>
+,
+<?php
+    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'West Bengal'";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_assoc($result);
+    echo $row["state"];
+    ?>
+,
+<?php
+    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Andaman and Nicobar Islands'";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_assoc($result);
+    echo
+    $row["state"];
+    ?>
+,
+<?php
+    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Chandigarh'";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_assoc($result);
+    echo $row["state"];
+    ?>
+,
+<?php
+    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Dadra and Nagar Haveli and Daman and Diu'";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_assoc($result);
+    echo $row["state"];
+    ?>
+,
+<?php
+    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Delhi'";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_assoc($result);
+    echo $row["state"];
+    ?>
+,
+<?php
+    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Jammu And Kashmir'";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_assoc($result);
+    echo $row["state"];
+    ?>
+,
+<?php
+    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Ladakh'";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_assoc($result);
+    echo $row["state"];
+    ?>
+,
+<?php
+    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Lakshadweep'";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_assoc($result);
+    echo $row["state"];
+    ?>
+,
+<?php
+    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Puducherry'";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_assoc($result);
+    echo $row["state"];
+    ?>
+];
+var barColors = "rgb(174, 142, 196)";
+
+new Chart("myChart", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+  }
+});
+</script>
+
+</body>
+</html>

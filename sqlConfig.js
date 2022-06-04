@@ -25,7 +25,6 @@ exports.getConnection = function() {
 		conn.query("SELECT * FROM suraksha", function(err, rows, field){
 			conn.release();
 			if(err) console.log(err);
-			console.log("query successfull");
 		})
 	});
 }
@@ -36,11 +35,9 @@ exports.runQuery = function(query, fn) {
 			conn.release();
 			console.log(err);
 		}
-		console.log("Connected");
 		conn.query(query, function(err, result, field){
 			conn.release();
 			if(err) console.log(err);
-			console.log("query successfull");
 			fn(result);
 		})
 	})

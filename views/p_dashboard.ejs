@@ -1,5 +1,27 @@
-<%- include("partials/header") -%>
+<%- include("partials/p_header") -%>
 
-<h1> Hii police!! </h1>
+<div class="welcome-user">
+    <h1>WELCOME Personnel <%= police_id%></h1>
+    <a href="/logout"> <button type="button">Logout</button></a>
+</div>
+
+<div class="personal-details">
+    <hr style="height:2px;border-width:0;color:rgb(113, 53, 53);background-color:rgb(113, 53, 53)">
+    <h1>Personal Details in DB</h1>
+    <table border = "1">
+    	<tr>
+            <td class="s-cell">Police ID</td>
+            <td><%= p_details.police_station_id%></td>
+        </tr>
+        <tr>
+            <td class="s-cell">Name</td>
+            <td><%= p_details.police_station_incharge%></td>
+        </tr>
+        <tr>
+            <td class="s-cell">State:</td>
+            <td><%= p_details.police_station_state%></td>
+        </tr>
+
+      </table>
 
 <%- include("partials/footer") -%>

@@ -4,7 +4,7 @@ const ejs = require("ejs");
 const _ = require("lodash");
 const sql = require(__dirname + "/sqlConfig.js");
 const session = require("express-session");
-const passport = require("passport");
+const flash = require('connect-flash');
 
 const app = express();
 
@@ -13,16 +13,22 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-// app.set('trust proxy', 1) // trust first proxy
-// app.use(session({
-//   secret: "keyboard cat",
-//   resave: false,
-//   saveUninitialized: true,
-//   cookie: { secure: true }
-// }));
+app.use(session({
+  secret: "keyboard cat",
+  resave: false,
+  saveUninitialized: true,
+}));
+app.use(flash());
 
-// app.use(passport.initialize());
-// app.use(passport.session());
+function isAuthenticated (req, res, next) {
+  if (req.session.user) next();
+  else {
+    // var error = new Error("User Not Authenticated");
+    // error.status = 403;
+    // return next(error);
+    next("/");
+  }
+}
 
 
 app.route("/")
@@ -46,12 +52,19 @@ app.route("/login")
     sql.runQuery("select * from userdetails where username = '" + username +"' and password = '" + password + "'", function(result){   
       if(result.length == 0) res.send("failure");
       else {   
-        sql.runQuery("SELECT * FROM `fir` WHERE username= '"+username+"'",function(result2){  
-          res.render("dashboard", { userdetails: result[0],
-                                    FIRs: result2 });
-        });
+        req.session.regenerate(function (err) {
+          if (err) next(err)
+
+          req.session.user = req.body.username;
+          req.session.maxAge = 1200000;
+          req.session.save(function (err) {
+            if (err) return next(err);
+            res.redirect("/dashboard");
+          });
+        });        
       }
     });
+    
   });
 
 
@@ -74,17 +87,33 @@ app.route("/register")
     sql.runQuery(query, function (result) {
       console.log("1 record inserted");
     });
-    res.render("login");
+    res.redirect("/login");
   });
 
+
 app.get("/logout", function(req, res){
-  res.redirect("/");
+  req.session.user = null
+  req.session.save(function (err) {
+    if (err) next(err)
+    req.session.regenerate(function (err) {
+      if (err) next(err)
+      res.redirect('/')
+    });
+  });
 });
 
 
 app.route("/dashboard")
-  .get(function(req, res) {
-    res.render("dashboard");
+  .get(isAuthenticated ,function(req, res, next) {
+    sql.runQuery("select * from userdetails where username = '" + req.session.user +"'", function(result){   
+      if(result.length == 0) res.send("failure");
+      else {   
+        sql.runQuery("SELECT * FROM `fir` WHERE username= '"+req.session.user+"'",function(result2){ 
+          res.render("dashboard", { userdetails: result[0],
+                                    FIRs: result2 });          
+        });
+      }
+    });   
   })
   .post();
 
@@ -100,31 +129,61 @@ app.route("/p_login")
 
     sql.runQuery(query, function(result){
       if(result.length == 0) res.send("failure");
-      else res.render("p_dashboard");
+      else {
+        req.session.regenerate(function (err) {
+          if (err) next(err)
+
+          req.session.user = req.body.police_station_id;
+          req.session.maxAge = 1200000;
+          req.session.save(function (err) {
+            if (err) return next(err);
+            res.redirect("/p_dashboard");
+          });
+        }); 
+      }
     });
     
   });
 
 
+app.get("/p_dashboard", isAuthenticated, function(req, res){
+  sql.runQuery("SELECT * FROM police_station WHERE police_station_id= '"+req.session.user+"'", function(result){
+    res.render("p_dashboard", {police_id: req.session.user, p_details: result[0]});
+  });
+});
+
 
 app.route("/fir")
   .get(function(req, res) {
-    res.render("fir");
+    res.render("fir", {username: req.session.user, insert: false});
   })
-  .post(function(req, res){
-    const filer_name = req.body.filer_name;
-    const asserted_name = req.body.asserted_name;
-    const fir_place = req.body.fir_place;
-    const fir_time = req.body.fir_time;
-    const fir_nature = req.body.fir_nature;
+  .post(isAuthenticated ,function(req, res){
+    const complainer_name = req.body.complainer_name;
+    const reffral_name = req.body.reffral_name;
+    const incident_place = req.body.incident_place;
+    const time = req.body.time;
+    const nature = req.body.nature;
+    const state = req.body.state;
+    const public_consent = req.body.public_consent;
 
-    const query = "insert into fir (username,complainer_name, reffral_name, nature, time, incident_place, public_consent,state) values ('"+username+"', '"+complainer_name+"', '"+refferal_name+"', '"+nature+"', '"+time+"', '"+incident_place+"', '"+public_consent+"', '"+state+"')";
-    console.log(query);
+    const query = "insert into fir (username,complainer_name, reffral_name, nature, time, incident_place, public_consent,state) values ('"+req.session.user+"', '"+complainer_name+"', '"+reffral_name+"', '"+nature+"', '"+time+"', '"+incident_place+"', '"+public_consent+"', '"+state+"')";
     sql.runQuery(query, function (result) {
       console.log("1 record inserted");
     });
-    res.render("info", {filer_name: filer_name});
+    res.render("fir", {username: req.session.user, insert: true});
   });
+
+
+app.route("/piechart")
+  .get(isAuthenticated ,function(req, res){
+    res.render("piechart", {username: req.session.user});
+  })
+  .post();
+
+
+app.get("/barchart", isAuthenticated, function(req, res){
+  res.render("barchart", {username: req.session.user});
+});
 
 
 let port = process.env.PORT;
@@ -133,5 +192,5 @@ if (port == null || port == "") {
 }
 
 app.listen(port, function() {
-  console.log("Server started on https://sheltered-tor-04410.herokuapp.com/ or local port 3000");
+  console.log("Server started on https://frozen-oasis-19006.herokuapp.com/ or local port 3000");
 });
