@@ -5,6 +5,7 @@ const _ = require("lodash");
 const sql = require(__dirname + "/sqlConfig.js");
 const session = require("express-session");
 const flash = require('connect-flash');
+//const data_fetch = require(__dirname + "/data_fetch.js");
 
 const app = express();
 
@@ -174,15 +175,19 @@ app.route("/fir")
   });
 
 
-app.route("/piechart")
-  .get(isAuthenticated ,function(req, res){
-    res.render("piechart", {username: req.session.user});
-  })
-  .post();
+app.get("/piechart" ,function(req, res){
+  const query = "select nature, count(nature) as counts from suraksha.fir GROUP BY nature HAVING COUNT(nature) > 1";
+  sql.runQuery(query, function(result){
+    res.render("piechart", {username: req.session.user, arr: result});
+  });
+});
 
 
-app.get("/barchart", isAuthenticated, function(req, res){
-  res.render("barchart", {username: req.session.user});
+app.get("/barchart", function(req, res){
+  const query = "select state, count(state) as counts from suraksha.userDetails group by state having count(state) >= 0 order by state";
+  sql.runQuery(query, function(result){
+    res.render("barchart", {username: req.session.user, arr: result});
+  });
 });
 
 

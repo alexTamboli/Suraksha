@@ -17,248 +17,60 @@
   </body>
 
 <script>
-var xValues = ["Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chattisgarh","Goa","Gujarat","Haryana","Himachal Pradesh","Jharkhand","Karnataka","Kerela","MP","Maharashtra","Manipur","Meghalaya","Nagaland","Odisha","Punjab","Rajasthan","TN","Tripura","UP","WB","Andaman - Nicobar","Chandigarh","Daman and Diu","J&K","Ladakh","Lakshadweep","Puducherry"];
-var yValues = [
-  <?php
-    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Andhra Pradesh'";
-    $result = mysqli_query($con, $sql);
-    $row = mysqli_fetch_assoc($result);
-    echo $row["state"];
-    ?>
-,
-<?php
-    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Arunachal Pradesh'";
-    $result = mysqli_query($con, $sql);
-    $row = mysqli_fetch_assoc($result);
-    echo $row["state"];
-    ?>
-,
-<?php
-    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Assam'";
-    $result = mysqli_query($con, $sql);
-    $row = mysqli_fetch_assoc($result);
-    echo $row["state"];
-    ?>
-,
-<?php
-    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Bihar'";
-    $result = mysqli_query($con, $sql);
-    $row = mysqli_fetch_assoc($result);
-    echo $row["state"];
-    ?>
-,
-<?php
-   $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Chattisgarh'";
-    $result = mysqli_query($con, $sql);
-    $row = mysqli_fetch_assoc($result);
-    echo $row["state"];
-    ?>
-,
-<?php
-    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Goa'";
-    $result = mysqli_query($con, $sql);
-    $row = mysqli_fetch_assoc($result);
-    echo $row["state"];
-    ?>
-,
-<?php
-    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Gujarat'";
-    $result = mysqli_query($con, $sql);
-    $row = mysqli_fetch_assoc($result);
-    echo $row["state"];
-    ?>
-,
-<?php
-    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Haryana'";
-    $result = mysqli_query($con, $sql);
-    $row = mysqli_fetch_assoc($result);
-    echo $row["state"];
-    ?>
-,
-<?php
-    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Himachal Pradesh'";
-    $result = mysqli_query($con, $sql);
-    $row = mysqli_fetch_assoc($result);
-    echo $row["state"];
-    ?>
-,
-<?php
-    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Jharkhand'";
-    $result = mysqli_query($con, $sql);
-    $row = mysqli_fetch_assoc($result);
-    echo $row["state"];
-    ?>
-,
-<?php
-    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Karnataka'";
-    $result = mysqli_query($con, $sql);
-    $row = mysqli_fetch_assoc($result);
-    echo $row["state"];
-    ?>
-,
-<?php
-    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Kerela'";
-    $result = mysqli_query($con, $sql);
-    $row = mysqli_fetch_assoc($result);
-    echo $row["state"];
-    ?>
-,
-<?php
-    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Madhya Pradesh'";
-    $result = mysqli_query($con, $sql);
-    $row = mysqli_fetch_assoc($result);
-    echo $row["state"];
-    ?>
-,
-<?php
-    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Maharashtra'";
-    $result = mysqli_query($con, $sql);
-    $row = mysqli_fetch_assoc($result);
-    echo $row["state"];
-    ?>
-,
-<?php
-    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Manipur'";
-    $result = mysqli_query($con, $sql);
-    $row = mysqli_fetch_assoc($result);
-    echo $row["state"];
-    ?>
-,
-<?php
-    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Meghalaya'";
-    $result = mysqli_query($con, $sql);
-    $row = mysqli_fetch_assoc($result);
-    echo $row["state"];
-    ?>
-,
-<?php
-    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Nagaland'";
-    $result = mysqli_query($con, $sql);
-    $row = mysqli_fetch_assoc($result);
-    echo $row["state"];
-    ?>
-,
-<?php
-    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Odisha'";
-    $result = mysqli_query($con, $sql);
-    $row = mysqli_fetch_assoc($result);
-    echo $row["state"];
-    ?>
-,
-<?php
-    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Punjab'";
-    $result = mysqli_query($con, $sql);
-    $row = mysqli_fetch_assoc($result);
-    echo $row["state"];
-    ?>
-,
-<?php
-    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Rajasthan'";
-    $result = mysqli_query($con, $sql);
-    $row = mysqli_fetch_assoc($result);
-    echo $row["state"];
-    ?>
-,
-<?php
-    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Tamil Nadu'";
-    $result = mysqli_query($con, $sql);
-    $row = mysqli_fetch_assoc($result);
-    echo $row["state"];
-    ?>
-,
-<?php
-    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Uttar Pradesh'";
-    $result = mysqli_query($con, $sql);
-    $row = mysqli_fetch_assoc($result);
-    echo $row["state"];
-    ?>
-,
-<?php
-    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Uttrakhand'";
-    $result = mysqli_query($con, $sql);
-    $row = mysqli_fetch_assoc($result);
-    echo $row["state"];
-    ?>
-,
-<?php
-    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'West Bengal'";
-    $result = mysqli_query($con, $sql);
-    $row = mysqli_fetch_assoc($result);
-    echo $row["state"];
-    ?>
-,
-<?php
-    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Andaman and Nicobar Islands'";
-    $result = mysqli_query($con, $sql);
-    $row = mysqli_fetch_assoc($result);
-    echo
-    $row["state"];
-    ?>
-,
-<?php
-    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Chandigarh'";
-    $result = mysqli_query($con, $sql);
-    $row = mysqli_fetch_assoc($result);
-    echo $row["state"];
-    ?>
-,
-<?php
-    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Dadra and Nagar Haveli and Daman and Diu'";
-    $result = mysqli_query($con, $sql);
-    $row = mysqli_fetch_assoc($result);
-    echo $row["state"];
-    ?>
-,
-<?php
-    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Delhi'";
-    $result = mysqli_query($con, $sql);
-    $row = mysqli_fetch_assoc($result);
-    echo $row["state"];
-    ?>
-,
-<?php
-    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Jammu And Kashmir'";
-    $result = mysqli_query($con, $sql);
-    $row = mysqli_fetch_assoc($result);
-    echo $row["state"];
-    ?>
-,
-<?php
-    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Ladakh'";
-    $result = mysqli_query($con, $sql);
-    $row = mysqli_fetch_assoc($result);
-    echo $row["state"];
-    ?>
-,
-<?php
-    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Lakshadweep'";
-    $result = mysqli_query($con, $sql);
-    $row = mysqli_fetch_assoc($result);
-    echo $row["state"];
-    ?>
-,
-<?php
-    $sql = "SELECT count(state) AS state FROM userDetails WHERE state = 'Puducherry'";
-    $result = mysqli_query($con, $sql);
-    $row = mysqli_fetch_assoc($result);
-    echo $row["state"];
-    ?>
-];
-var barColors = "rgb(174, 142, 196)";
+    var xValues = ["Andaman - Nicobar", "Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chandigarh", "Chattisgarh","Daman and Diu","Goa","Gujarat","Haryana","Himachal Pradesh","J&K","Jharkhand","Karnataka","Kerela","Ladakh","Lakshadweep","MP","Maharashtra","Manipur","Meghalaya","Nagaland","Odisha","Puducherry","Punjab","Rajasthan","TN","UP","WB"];
+    var yValues = ["<%=arr[0].counts %>",
+                 "<%=arr[1].counts %>",
+                 "<%=arr[2].counts %>",
+                 "<%=arr[3].counts %>",
+                 "<%=arr[4].counts %>",
+                 "<%=arr[5].counts %>",
+                 "<%=arr[6].counts %>",
+                 "<%=arr[7].counts %>",
+                 "<%=arr[8].counts %>",
+                 "<%=arr[9].counts %>",
+                 "<%=arr[10].counts %>",
+                 "<%=arr[11].counts %>",
+                 "<%=arr[12].counts %>",
+                 "<%=arr[13].counts %>",
+                 "<%=arr[14].counts %>",
+                 "<%=arr[15].counts %>",
+                 "<%=arr[16].counts %>",
+                 "<%=arr[17].counts %>",
+                 "<%=arr[18].counts %>",
+                 "<%=arr[19].counts %>",
+                 "<%=arr[20].counts %>",
+                 "<%=arr[21].counts %>",
+                 "<%=arr[22].counts %>",
+                 "<%=arr[23].counts %>",
+                 "<%=arr[24].counts %>",
+                 "<%=arr[25].counts %>",
+                 "<%=arr[26].counts %>",
+                 "<%=arr[27].counts %>",
+                 "<%=arr[28].counts %>",
+                 "<%=arr[29].counts %>"];
+    var barColors = "rgb(174, 142, 196)";
 
-new Chart("myChart", {
-  type: "bar",
-  data: {
-    labels: xValues,
-    datasets: [{
-      backgroundColor: barColors,
-      data: yValues
-    }]
-  },
-  options: {
-    legend: {display: false},
-  }
-});
+    new Chart("myChart", {
+        type: "bar",
+        options: {
+            legend: {display: false},
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        },
+        data: {
+            labels: xValues,
+            datasets: [{
+                label: "No. of Users",
+                backgroundColor: barColors,
+                data: yValues
+            }]
+        }            
+    });
 </script>
 
 </body>

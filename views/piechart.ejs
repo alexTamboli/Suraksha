@@ -18,74 +18,27 @@
     
 </body>
 
-  	<script>
-var xValues = ["Seuxal Assault", "Robbery", "Status Dissemination", "Property Issue", "Accident", "Others"];
-var yValues = 
-    [<?php
-    $sql = "SELECT count(nature) AS Nature FROM fir WHERE nature='Sexual Assault'";
-    $result = mysqli_query($con, $sql);
-    $row = mysqli_fetch_assoc($result);
-    echo $row["Nature"];
-    ?>
-, 
-    <?php
-    $sql = "SELECT count(nature) AS Nature FROM fir WHERE nature='Robbery'";
-    $result = mysqli_query($con, $sql);
-    $row = mysqli_fetch_assoc($result);
-    echo $row["Nature"];
-    ?>
-,
-    <?php
-    $sql = "SELECT count(nature) AS Nature FROM fir WHERE nature='Status Dissemination'";
-    $result = mysqli_query($con, $sql);
-    $row = mysqli_fetch_assoc($result);
-    echo $row["Nature"];
-    ?>
-,
-    <?php
-    $sql = "SELECT count(nature) AS Nature FROM fir WHERE nature='Property Issue'";
-    $result = mysqli_query($con, $sql);
-    $row = mysqli_fetch_assoc($result);
-    echo $row["Nature"];
-    ?>
-,
-    <?php
-    $sql = "SELECT count(nature) AS Nature FROM fir WHERE nature='Accident'";
-    $result = mysqli_query($con, $sql);
-    $row = mysqli_fetch_assoc($result);
-    echo $row["Nature"];
-    ?>
-,
-    <?php
-    $sql = "SELECT count(nature) AS Nature FROM fir WHERE nature='Others'";
-    $result = mysqli_query($con, $sql);
-    $row = mysqli_fetch_assoc($result);
-    echo $row["Nature"];
-    ?>
-];
-var barColors = [
-  "#b91d47",
-  "#00aba9",
-  "#2b5797",
-  "#e8c3b9",
-  "#1e7145",
-  "#2b5562"
-];
+<script>
+    var xValues = ["Status Dissemination", "Accident", "Property Issue", "Robbery", "Sexual Assualt", "Others"];
+    var yValues = ["<%=arr[0].counts%>", "<%=arr[1].counts%>", "<%=arr[2].counts%>", "<%=arr[3].counts%>", "<%=arr[4].counts%>", "<%=arr[5].counts%>"];
+    var barColors = [
+      "#b91d47",
+      "#00aba9",
+      "#2b5797",
+      "#e8c3b9",
+      "#1e7145",
+      "#2b5562"
+    ];
 
-new Chart("myChart", {
-  type: "pie",
-  data: {
-    labels: xValues,
-    datasets: [{
-      backgroundColor: barColors,
-      data: yValues
-    }]
-  },
-});
-	</script>
+    new Chart("myChart", {
+      type: "pie",
+      data: {
+        labels: xValues,
+        datasets: [{
+          backgroundColor: barColors,
+          data: yValues
+        }]
+      },
+    });
+</script>
 </html>
-
-
-
-
-
